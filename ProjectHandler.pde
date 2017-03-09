@@ -4,7 +4,7 @@ class ProjectHandler {
     MainCanvas mainCanvas;
 
     // shapes ------------------------------
-    ExampleShape exampleShape;
+    ExampleCharacter exampleCharacter;
 
     ProjectHandler () {
         nodesBase = new NodesBase();
@@ -13,7 +13,7 @@ class ProjectHandler {
 
         int [] sampleScope = {5, 4};
         int [] sampleLocate = {0, 0};
-        exampleShape = new ExampleShape(nodesBase, sampleScope, sampleLocate);
+        exampleCharacter = new ExampleCharacter(nodesBase);
     }
 
     void setEnvironment(color strokeColor, int strokeWeight) {
@@ -37,8 +37,8 @@ class ProjectHandler {
         mainCanvas.addDepthColor(level, dist);
     }
 
-    // SHAPE EXAMPLE -----------------------
-    void exampleShapeAddDepth() {
-        exampleShape.addDepth();
+    // CHARACTER EXAMPLE -----------------------
+    void triggerExampleCharacter() {
+        exampleCharacter.triggerShape1();
     }
 }

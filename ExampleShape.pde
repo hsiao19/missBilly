@@ -1,4 +1,4 @@
-class ExampleShape extends BaseShape {
+class ExampleShape extends Shape {
 
 	ExampleShape(NodesBase nodesBase, int[] scope, int[] locate) {
 		super(nodesBase, scope, locate);

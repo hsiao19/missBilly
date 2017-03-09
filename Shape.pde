@@ -1,10 +1,10 @@
-class BaseShape{
+class Shape{
     NodesBase nodesBase;
     int[] scope;
     int[] initLocate, locate;
     Node [][] nodes;
   
-    BaseShape(NodesBase nodesBase, int[] scope, int[] locate){
+    Shape(NodesBase nodesBase, int[] scope, int[] locate){
         this.nodesBase = nodesBase;
         this.scope = scope;
         this.initLocate = locate;

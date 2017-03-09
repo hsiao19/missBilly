@@ -20,7 +20,7 @@ void draw(){
 
     if (keyPressed) {
     	if (key == 'A' || key == 'a') {
-    		projectHandler.exampleShapeAddDepth();
+    		projectHandler.triggerExampleCharacter();
     	}
     }
 }
