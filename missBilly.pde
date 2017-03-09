@@ -14,13 +14,13 @@ void setup(){
 }
 
 void draw(){
-	background(0);
+    background(0);
     projectHandler.displayMesh();
     projectHandler.addDepthColor(10, 500);
 
     if (keyPressed) {
-    	if (key == 'A' || key == 'a') {
-    		projectHandler.triggerExampleCharacter();
-    	}
+        if (key == 'A' || key == 'a') {
+            projectHandler.triggerExampleCharacter();
+        }
     }
 }

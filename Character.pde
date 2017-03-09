@@ -1,7 +1,7 @@
 class Character {
-	NodesBase nodesBase;
+    NodesBase nodesBase;
 
-	Character(NodesBase nodesBase) {
-		this.nodesBase = nodesBase;
-	}
+    Character(NodesBase nodesBase) {
+        this.nodesBase = nodesBase;
+    }
 }

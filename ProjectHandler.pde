@@ -3,16 +3,13 @@ class ProjectHandler {
 
     MainCanvas mainCanvas;
 
-    // shapes ------------------------------
+    // characters ------------------------------
     ExampleCharacter exampleCharacter;
 
     ProjectHandler () {
         nodesBase = new NodesBase();
 
         mainCanvas = new MainCanvas(nodesBase);
-
-        int [] sampleScope = {5, 4};
-        int [] sampleLocate = {0, 0};
         exampleCharacter = new ExampleCharacter(nodesBase);
     }
 
@@ -39,6 +36,6 @@ class ProjectHandler {
 
     // CHARACTER EXAMPLE -----------------------
     void triggerExampleCharacter() {
-        exampleCharacter.triggerShape1();
+        exampleCharacter.triggerExampleShape();
     }
 }
