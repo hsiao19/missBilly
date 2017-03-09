@@ -9,7 +9,7 @@ class ProjectHandler {
         nodesBase = new NodesBase();
 
         mainCanvas = new MainCanvas(nodesBase);
-        shape = new ShapeExample(nodesBase);
+        // shape = new ShapeExample(nodesBase);
     }
 
     void setEnvironment(color strokeColor, int strokeWeight) {
