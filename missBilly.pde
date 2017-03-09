@@ -17,4 +17,10 @@ void draw(){
 	background(0);
     projectHandler.displayMesh();
     projectHandler.addDepthColor(10, 500);
+
+    if (keyPressed) {
+    	if (key == 'A' || key == 'a') {
+    		projectHandler.exampleShapeAddDepth();
+    	}
+    }
 }
