@@ -13,21 +13,21 @@ class Node {
         vertex(this.x, this.y, this.z);
     }
 
-    void modifyXYZ(float x, float y, float z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
+    void moveXYZ(float speedX, float speedY, float speedZ) {
+        this.x += speedX;
+        this.y += speedY;
+        this.z += speedZ;
     }
 
-    void modifyX() {
-        this.x = x;
+    void moveX() {
+        this.x += speedX;
     }
 
-    void modifyY() {
-        this.y = y;
+    void moveY() {
+        this.y += speedY;
     }
 
-    void modifyZ() {
-        this.z = z;
+    void moveZ() {
+        this.z += speedZ;
     }
 }
