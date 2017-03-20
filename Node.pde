@@ -3,6 +3,7 @@ class Node extends PVector {
 
     int[] id; //[x, y]
     float initX, initY, initZ;
+    PVector initVector;
 
     Node(int[] id, float x, float y, float z) {
         super(x, y, z);
@@ -10,6 +11,7 @@ class Node extends PVector {
         this.initX = x;
         this.initY = y;
         this.initZ = z;  
+        initVector = new PVector(initX, initY, initZ);
     }
 
     void getVertex() {
@@ -17,6 +19,6 @@ class Node extends PVector {
     }
 
     void resetNode() {
-        this.set(this.initX, this.initY, this.initZ);
+        this.set(this.initVector);
     }
 }
