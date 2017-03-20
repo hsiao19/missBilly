@@ -25,6 +25,7 @@ class Shape{
 
     void shapeInitialize() {
         setShape(this.initLocate);
+        shapeReset();
     }
 
     void moveX(int speed){
@@ -45,7 +46,11 @@ class Shape{
         setShape(this.locate);
     }
 
-    void setMotion(){
-
+    void shapeReset() {
+        for (int x=0; x<this.scope[0]; x++) {
+            for (int y=0; y<this.scope[1]; y++) {
+                this.nodes[x][y].resetNode();
+            }
+        }        
     }
 }
