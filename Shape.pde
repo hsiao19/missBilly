@@ -54,16 +54,4 @@ class Shape{
             }
         }        
     }
-
-
-    Boolean isUnbounded(int[] locate) {
-        boolean isUnbounded = false;
-        if (locate[0] + this.scope[0] > nodesBase.xAxisNodeNum - 1) {
-            isUnbounded = true;
-        }
-        if (locate[1] + this.scope[1] > nodesBase.yAxisNodeNum - 1) {
-            isUnbounded = true;
-        }
-        return isUnbounded;
-    }
 }
