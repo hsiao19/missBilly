@@ -3,7 +3,6 @@ class Shape{
     int[] scope;
     int[] initLocate, locate;
     Node [][] nodes;
-    int recoverSpeed = 1;
   
     Shape(NodesBase nodesBase, int[] scope, int[] locate){
         this.nodesBase = nodesBase;
@@ -53,5 +52,21 @@ class Shape{
                 this.nodes[x][y].resetNode();
             }
         }        
+    }
+
+    void recover() {
+        for (int x=0; x<this.scope[0]; x++) {
+            for (int y=0; y<this.scope[1]; y++) {
+                this.nodes[x][y].recover();
+            }
+        }
+    }
+
+    void changeRecoverSpeed(float speed) {
+        for (int x=0; x<this.scope[0]; x++) {
+            for (int y=0; y<this.scope[1]; y++) {
+                this.nodes[x][y].changeRecoverSpeed(speed);
+            }
+        }
     }
 }
