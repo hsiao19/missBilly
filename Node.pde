@@ -24,7 +24,9 @@ class Node extends PVector {
     }
 
     void recover() {
-        float vx, vy, vz;        
+        float vx = 0;
+        float vy = 0;
+        float vz = 0;
         if (this.x != this.initX) {
             vx = _getAxisRecoverValue(this.x, this.initX);
         }
@@ -56,6 +58,7 @@ class Node extends PVector {
                 return distance;
             }
         }
+        return 0;
     }
 
     void changeRecoverSpeed(float speed) {
