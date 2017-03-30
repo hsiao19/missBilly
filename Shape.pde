@@ -3,6 +3,8 @@ class Shape{
     int[] scope;
     int[] initLocate, locate;
     Node [][] nodes;
+
+    boolean recover = false;
   
     Shape(NodesBase nodesBase, int[] scope, int[] locate){
         this.nodesBase = nodesBase;
