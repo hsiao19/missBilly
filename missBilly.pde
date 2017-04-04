@@ -18,9 +18,11 @@ void draw(){
     projectHandler.displayMesh();
     projectHandler.addDepthColor(10, 500);
 
+    projectHandler.displayExampleCharacter();
+
     if (keyPressed) {
         if (key == 'A' || key == 'a') {
-            projectHandler.triggerExampleCharacter();
+            projectHandler.triggerExampleInteraction();
         }
     }
 }

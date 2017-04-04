@@ -11,4 +11,8 @@ class ExampleShape extends Shape {
             }
         }
     }
+
+    void motion() {
+        addDepth();
+    }
 }

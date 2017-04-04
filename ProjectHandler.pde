@@ -34,8 +34,11 @@ class ProjectHandler {
         mainCanvas.addDepthColor(level, dist);
     }
 
-    // CHARACTER EXAMPLE -----------------------
-    void triggerExampleCharacter() {
-        exampleCharacter.triggerExampleShape();
+    // CHARACTER RELATED
+    void displayExampleCharacter() {
+        exampleCharacter.displayInteractShape();
+    }
+    void triggerExampleInteraction() {
+        exampleCharacter.triggerInteractShape(0, 0);
     }
 }
