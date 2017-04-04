@@ -5,6 +5,7 @@ class Node extends PVector {
     float initX, initY, initZ;
     PVector initVector;
     float recoverSpeed = 1;
+    boolean recovering = false;
 
     Node(int[] id, float x, float y, float z) {
         super(x, y, z);
@@ -38,27 +39,34 @@ class Node extends PVector {
         }
         PVector v = new PVector(vx, vy, vz);
         this.add(v);
+
+        if (vx == 0 && vy == 0 && vz == 0) {
+            this.recovering = false;
+        }
+        else {
+            this.recovering = true;
+        }
     }
 
     float _getAxisRecoverValue(float value, float initValue) {
         float distance = value - initValue;
+
         if (distance > 0) {
-            if (distance > this.recoverSpeed) {
+            if (distance >= this.recoverSpeed) {
                 return -this.recoverSpeed;
-            }
-            else {
-                return -distance;
-            }
-        }
-        else if (distance < 0) {
-            if (distance < -this.recoverSpeed) {
-                return this.recoverSpeed;
             }
             else {
                 return distance;
             }
         }
-        return 0;
+        else{
+            if (distance <= -this.recoverSpeed) {
+                return this.recoverSpeed;
+            }
+            else {
+                return -distance;
+            }
+        }
     }
 
     void changeRecoverSpeed(float speed) {
