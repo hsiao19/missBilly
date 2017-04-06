@@ -37,4 +37,5 @@ class ProjectHandler {
     void addDepthColor(int level, int dist) {
         mainCanvas.addDepthColor(level, dist);
     }
+
 }

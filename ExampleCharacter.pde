@@ -13,12 +13,8 @@ class ExampleCharacter extends Character {
     exampleInteractShape = new ExampleInteractShape(this.nodesBase, interactScope, interactLocation);
   }
 
-    void displayNormalShape() { // 新 function
-      // exampleNormalShape.addWaves();
-    }
-    
-    void displayInteractShape() { // 新 function
-        exampleInteractShape.addDepth();
+    void moveExampleShape() {
+
     }
   
   //  void createInteractShape(int[] location) {

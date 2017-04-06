@@ -19,4 +19,8 @@ class ExampleInteractShape extends Shape {
             }
         }
     }
+
+    void motion() {
+        addDepth();
+    }
 }
