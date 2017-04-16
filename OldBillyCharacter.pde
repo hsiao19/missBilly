@@ -1,38 +1,29 @@
 class OldBillyCharacter extends Character {
-  OldBillyNormalShape oldBillyNormalShape;
-  OldBillyInteractShape oldBillyInteractShape;
-  OldBillyInteractShape oldBillyInteractShape2;
-
   OldBillyCharacter(NodesBase nodesBase) {
     super(nodesBase);
+    normalShape = new OldBillyNormalShape[1][1];
     int[] normalScope = {51, 71};
     int[] normalLocation = {0, 0};
-    
-    int[] interactScope = {51, 10};
-    
-    for(int i = 0; i < STAGE_COUNT; i++){
-        int[] interactLocation = {0, 1 + 10 * i};
-        oldBillyInteractShape = new OldBillyInteractShape(this.nodesBase, interactScope, interactLocation);
+    for (int x=0; x<normalShape.length; x++) {
+      for (int y=0; y<normalShape[x].length; y++) {
+        normalShape[x][y] = new OldBillyNormalShape(this.nodesBase, normalScope, normalLocation);
+      }
     }
     
-    
-    
-    
-    oldBillyNormalShape = new OldBillyNormalShape(this.nodesBase, normalScope, normalLocation);
-    oldBillyInteractShape = new OldBillyInteractShape(this.nodesBase, interactScope, interactLocation);
-    oldBillyInteractShape2 = new OldBillyInteractShape(this.nodesBase, interactScope, interactLocation2);
+    interactShape = new OldBillyInteractShape[3][7];
+    int[] interactScope = {SHAPE_WIDTH, SHAPE_HEIGHT};
+    for (int x=0; x<interactShape.length; x++) {
+      for (int y=0; y<interactShape[x].length; y++) {
+        
+        int[] interactLocation = {(SHAPE_WIDTH * x), (SHAPE_HEIGHT * y)};
+        //println("======================");
+        //println(x, y);
+        //println("location", interactLocation[0], interactLocation[1]);
+        //println("scope", interactScope[0], interactScope[1]);
+        //println("right left", interactLocation[0] + interactScope[0], interactLocation[1] + interactScope[1]);
+        //println("unbounded", this.isShapeUnbounded(interactLocation, interactScope));
+        interactShape[x][y] = new OldBillyInteractShape(this.nodesBase, interactScope, interactLocation);  
+      }
+    }
   }
-
-  void displayNormalShape() { // 新 function
-    oldBillyNormalShape.addWaves();
-  }
-  
-  void displayInteractShape() { // 新 function
-    oldBillyInteractShape.addWaves();
-  }
-  
-  void displayInteractShape2() { // 新 function
-    oldBillyInteractShape2.addWaves();
-  }
-  
 }
