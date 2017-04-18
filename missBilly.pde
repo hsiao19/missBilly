@@ -80,6 +80,37 @@ void draw(){
         projectHandler.lightBillyCharacter.triggerInteractShape(textX, textY);
     }
   }
+  if (BILLYSTAGE == 'S') {
+    projectHandler.sensitiveBillyCharacter.displayAllShapes();
+    if(keyPressed){
+        if(key == 'q'){textX = 2;textY = 0;}
+        if(key == 'a'){textX = 1;textY = 0;} 
+        if(key == 'z'){textX = 0;textY = 0;}
+        if(key == 'w'){textX = 2;textY = 1;}
+        if(key == 's'){textX = 1;textY = 1;} 
+        if(key == 'x'){textX = 0;textY = 1;}
+        if(key == 'e'){textX = 2;textY = 2;}
+        if(key == 'd'){textX = 1;textY = 2;} 
+        if(key == 'c'){textX = 0;textY = 2;}
+        projectHandler.sensitiveBillyCharacter.triggerInteractShape(textX, textY);
+    }
+  }
+  if (BILLYSTAGE == 'N') {
+    projectHandler.netCharacter.displayAllShapes();
+    if(keyPressed){
+        if(key == 'q'){textX = 2;textY = 0;}
+        if(key == 'a'){textX = 1;textY = 0;} 
+        if(key == 'z'){textX = 0;textY = 0;}
+        if(key == 'w'){textX = 2;textY = 1;}
+        if(key == 's'){textX = 1;textY = 1;} 
+        if(key == 'x'){textX = 0;textY = 1;}
+        if(key == 'e'){textX = 2;textY = 2;}
+        if(key == 'd'){textX = 1;textY = 2;} 
+        if(key == 'c'){textX = 0;textY = 2;}
+        projectHandler.netCharacter.triggerInteractShape(textX, textY);
+    }
+  }
+  
   
   if(keyPressed){
     if(key == '2'){
@@ -99,6 +130,18 @@ void draw(){
       projectHandler.lightBillyCharacter.triggerNormalShape(0, 0);
       SUM_X = projectHandler.lightBillyCharacter.interactShape.length;
       SUM_Y = projectHandler.lightBillyCharacter.interactShape[0].length;
+    }
+    if(key == '5'){
+      BILLYSTAGE = 'S';
+      projectHandler.sensitiveBillyCharacter.triggerNormalShape(0, 0);
+      SUM_X = projectHandler.sensitiveBillyCharacter.interactShape.length;
+      SUM_Y = projectHandler.sensitiveBillyCharacter.interactShape[0].length;
+    }
+    if(key == '6'){
+      BILLYSTAGE = 'N';
+      projectHandler.netCharacter.triggerNormalShape(0, 0);
+      SUM_X = projectHandler.netCharacter.interactShape.length;
+      SUM_Y = projectHandler.netCharacter.interactShape[0].length;
     }
   }
 }

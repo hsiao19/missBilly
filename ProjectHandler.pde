@@ -7,6 +7,8 @@ class ProjectHandler {
   ExampleCharacter exampleCharacter;
   OldBillyCharacter oldBillyCharacter;
   LightBillyCharacter lightBillyCharacter;
+  SensitiveBillyCharacter sensitiveBillyCharacter;
+  NetCharacter netCharacter;
 
   ProjectHandler () {
     nodesBase = new NodesBase();
@@ -15,6 +17,8 @@ class ProjectHandler {
     exampleCharacter = new ExampleCharacter(nodesBase);
     oldBillyCharacter = new OldBillyCharacter(nodesBase);
     lightBillyCharacter = new LightBillyCharacter(nodesBase);
+    sensitiveBillyCharacter = new SensitiveBillyCharacter(nodesBase);
+    netCharacter = new NetCharacter(nodesBase);
   }
 
   void setEnvironment(color strokeColor, int strokeWeight) {

@@ -16,12 +16,6 @@ class ExampleCharacter extends Character {
       for (int y=0; y<interactShape[x].length; y++) {
         
         int[] interactLocation = {(SHAPE_WIDTH * x), (SHAPE_HEIGHT * y)};
-        //println("======================");
-        //println(x, y);
-        //println("location", interactLocation[0], interactLocation[1]);
-        //println("scope", interactScope[0], interactScope[1]);
-        //println("right left", interactLocation[0] + interactScope[0], interactLocation[1] + interactScope[1]);
-        //println("unbounded", this.isShapeUnbounded(interactLocation, interactScope));
         interactShape[x][y] = new ExampleInteractShape(this.nodesBase, interactScope, interactLocation);  
       }
     }
