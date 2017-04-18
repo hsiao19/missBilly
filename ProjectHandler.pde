@@ -6,6 +6,8 @@ class ProjectHandler {
     // characters ------------------------------
     ExampleCharacter exampleCharacter;
     Billy billy;
+    OldBillyCharacter oldBillyCharacter;
+    LightBillyCharacter lightBillyCharacter;
 
     ProjectHandler () {
         nodesBase = new NodesBase();
@@ -13,6 +15,8 @@ class ProjectHandler {
         mainCanvas = new MainCanvas(nodesBase);
         exampleCharacter = new ExampleCharacter(nodesBase);
         billy = new Billy(nodesBase);
+        oldBillyCharacter = new OldBillyCharacter(nodesBase);
+        lightBillyCharacter = new LightBillyCharacter(nodesBase);
     }
 
     void setEnvironment(color strokeColor, int strokeWeight) {
@@ -35,12 +39,4 @@ class ProjectHandler {
     void addDepthColor(int level, int dist) {
         mainCanvas.addDepthColor(level, dist);
     }
-
-    // CHARACTER RELATED
-    // void displayExampleCharacter() {
-    //     exampleCharacter.displayInteractShape();
-    // }
-    // void triggerExampleInteraction() {
-    //     exampleCharacter.triggerInteractShape(0, 0);
-    // }
 }

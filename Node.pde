@@ -1,75 +1,75 @@
 class Node extends PVector {
-    // PVector docs: https://processing.org/reference/PVector.html
+  // PVector docs: https://processing.org/reference/PVector.html
 
-    int[] id; //[x, y]
-    float initX, initY, initZ;
-    PVector initVector;
-    float recoverSpeed = 1;
-    boolean recovering = false;
+  int[] id; //[x, y]
+  float initX, initY, initZ;
+  PVector initVector;
+  float recoverSpeed = 1;
+  boolean recovering = false;
 
-    Node(int[] id, float x, float y, float z) {
-        super(x, y, z);
-        this.id = id;
-        this.initX = x;
-        this.initY = y;
-        this.initZ = z;  
-        initVector = new PVector(initX, initY, initZ);
+  Node(int[] id, float x, float y, float z) {
+    super(x, y, z);
+    this.id = id;
+    this.initX = x;
+    this.initY = y;
+    this.initZ = z;  
+    initVector = new PVector(initX, initY, initZ);
+  }
+
+  void getVertex() {
+    vertex(this.x, this.y, this.z);
+  }
+
+  void resetNode() {
+    this.set(this.initVector);
+  }
+
+  void recover() {
+    float vx = 0;
+    float vy = 0;
+    float vz = 0;
+    if (this.x != this.initX) {
+      vx = _getAxisRecoverValue(this.x, this.initX);
     }
-
-    void getVertex() {
-        vertex(this.x, this.y, this.z);
+    if (this.y != this.initY) {
+      vy = _getAxisRecoverValue(this.y, this.initY);
     }
-
-    void resetNode() {
-        this.set(this.initVector);
+    if (this.z != this.initZ) {
+      vz = _getAxisRecoverValue(this.z, this.initZ);
     }
+    PVector v = new PVector(vx, vy, vz);
+    this.add(v);
 
-    void recover() {
-        float vx = 0;
-        float vy = 0;
-        float vz = 0;
-        if (this.x != this.initX) {
-            vx = _getAxisRecoverValue(this.x, this.initX);
-        }
-        if (this.y != this.initY) {
-            vy = _getAxisRecoverValue(this.y, this.initY);
-        }
-        if (this.z != this.initZ) {
-            vz = _getAxisRecoverValue(this.z, this.initZ);
-        }
-        PVector v = new PVector(vx, vy, vz);
-        this.add(v);
-
-        if (vx == 0 && vy == 0 && vz == 0) {
-            this.recovering = false;
-        }
-        else {
-            this.recovering = true;
-        }
+    if (vx == 0 && vy == 0 && vz == 0) {
+      this.recovering = false;
     }
-
-    float _getAxisRecoverValue(float value, float initValue) {
-        float distance = value - initValue;
-
-        if (distance > 0) {
-            if (distance >= this.recoverSpeed) {
-                return -this.recoverSpeed;
-            }
-            else {
-                return distance;
-            }
-        }
-        else{
-            if (distance <= -this.recoverSpeed) {
-                return this.recoverSpeed;
-            }
-            else {
-                return -distance;
-            }
-        }
+    else {
+      this.recovering = true;
     }
+  }
 
-    void changeRecoverSpeed(float speed) {
-        this.recoverSpeed = speed;
+  float _getAxisRecoverValue(float value, float initValue) {
+    float distance = value - initValue;
+
+    if (distance > 0) {
+      if (distance >= this.recoverSpeed) {
+        return -this.recoverSpeed;
+      }
+      else {
+        return distance;
+      }
     }
+    else{
+      if (distance <= -this.recoverSpeed) {
+        return this.recoverSpeed;
+      }
+      else {
+        return -distance;
+      }
+    }
+  }
+
+  void changeRecoverSpeed(float speed) {
+    this.recoverSpeed = speed;
+  }
 }
