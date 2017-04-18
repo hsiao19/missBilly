@@ -2,7 +2,6 @@
 // graphic related
 int WIDTH = 500; //下面要記得改
 int HEIGHT = 700; //下面要記得改
-int STAIR_NUMS = 3;
 
 int MESH_WIDTH = 10;
 int MESH_HEIGHT = 10;
@@ -22,8 +21,6 @@ char BILLYSTAGE = 'E';
 int textX = 0;
 int textY = 0;
 
-boolean KEYBOARD_TEST = true;
-
 ProjectHandler projectHandler;
 
 void setup(){
@@ -32,33 +29,11 @@ void setup(){
   projectHandler.setEnvironment(color(255), STROKE_WEIGHT);
 }
 
-void draw() {
-    // base setting
-    background(0);
-    projectHandler.displayMesh();
-    projectHandler.addDepthColor(10, 500);
-
-
-}
-
 void draw(){
-    background(0);
-    projectHandler.displayMesh();
-    projectHandler.addDepthColor(10, 500);
+  background(0);
+  projectHandler.displayMesh();
+  projectHandler.addDepthColor(10, 500);
 
-
-    projectHandler.billy.displayAllShapes();
-    projectHandler.exampleCharacter.displayAllShapes();
-
-    if (keyPressed) {
-        if (key == 'A' || key == 'a') {
-            projectHandler.billy.triggerInteractShape(0, 0);
-        }
-        if (key == 'S' || key == 's') {
-            projectHandler.exampleCharacter.triggerInteractShape(0, 0);
-        }
-    }
-  }
   // Switch Character
   if (BILLYSTAGE == 'E') {
     projectHandler.exampleCharacter.displayAllShapes();
@@ -73,6 +48,8 @@ void draw(){
         if(key == 'd'){textX = 1;textY = 2;} 
         if(key == 'c'){textX = 0;textY = 2;}
         projectHandler.exampleCharacter.triggerInteractShape(textX, textY);
+    }
+  }
   if (BILLYSTAGE == 'O') {
     projectHandler.oldBillyCharacter.displayAllShapes();
     if(keyPressed){
@@ -103,6 +80,37 @@ void draw(){
         projectHandler.lightBillyCharacter.triggerInteractShape(textX, textY);
     }
   }
+  if (BILLYSTAGE == 'S') {
+    projectHandler.sensitiveBillyCharacter.displayAllShapes();
+    if(keyPressed){
+        if(key == 'q'){textX = 2;textY = 0;}
+        if(key == 'a'){textX = 1;textY = 0;} 
+        if(key == 'z'){textX = 0;textY = 0;}
+        if(key == 'w'){textX = 2;textY = 1;}
+        if(key == 's'){textX = 1;textY = 1;} 
+        if(key == 'x'){textX = 0;textY = 1;}
+        if(key == 'e'){textX = 2;textY = 2;}
+        if(key == 'd'){textX = 1;textY = 2;} 
+        if(key == 'c'){textX = 0;textY = 2;}
+        projectHandler.sensitiveBillyCharacter.triggerInteractShape(textX, textY);
+    }
+  }
+  if (BILLYSTAGE == 'N') {
+    projectHandler.netCharacter.displayAllShapes();
+    if(keyPressed){
+        if(key == 'q'){textX = 2;textY = 0;}
+        if(key == 'a'){textX = 1;textY = 0;} 
+        if(key == 'z'){textX = 0;textY = 0;}
+        if(key == 'w'){textX = 2;textY = 1;}
+        if(key == 's'){textX = 1;textY = 1;} 
+        if(key == 'x'){textX = 0;textY = 1;}
+        if(key == 'e'){textX = 2;textY = 2;}
+        if(key == 'd'){textX = 1;textY = 2;} 
+        if(key == 'c'){textX = 0;textY = 2;}
+        projectHandler.netCharacter.triggerInteractShape(textX, textY);
+    }
+  }
+  
   
   if(keyPressed){
     if(key == '2'){
@@ -122,6 +130,18 @@ void draw(){
       projectHandler.lightBillyCharacter.triggerNormalShape(0, 0);
       SUM_X = projectHandler.lightBillyCharacter.interactShape.length;
       SUM_Y = projectHandler.lightBillyCharacter.interactShape[0].length;
+    }
+    if(key == '5'){
+      BILLYSTAGE = 'S';
+      projectHandler.sensitiveBillyCharacter.triggerNormalShape(0, 0);
+      SUM_X = projectHandler.sensitiveBillyCharacter.interactShape.length;
+      SUM_Y = projectHandler.sensitiveBillyCharacter.interactShape[0].length;
+    }
+    if(key == '6'){
+      BILLYSTAGE = 'N';
+      projectHandler.netCharacter.triggerNormalShape(0, 0);
+      SUM_X = projectHandler.netCharacter.interactShape.length;
+      SUM_Y = projectHandler.netCharacter.interactShape[0].length;
     }
   }
 }
