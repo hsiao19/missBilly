@@ -2,9 +2,12 @@ class Character {
     NodesBase nodesBase;
     Shape[][] interactShape;
     Shape[][] normalShape;
+    int baseWidth, baseHeight;
 
     Character(NodesBase nodesBase) {
         this.nodesBase = nodesBase;
+        baseWidth = this.nodesBase.xAxisNodeNum;
+        baseHeight = this.nodesBase.yAxisNodeNum;
     }
 
     Boolean isShapeUnbounded(int[] location, int[] scope) {
@@ -19,19 +22,23 @@ class Character {
     }
 
     void displayInteractShape() {
-        for (int x=0; x<interactShape.length; x++) {
-            for (int y=0; y<interactShape[x].length; y++) {
-                interactShape[x][y].display();
-            }            
-        }
+        if (interactShape != null) {
+            for (int x=0; x<interactShape.length; x++) {
+                for (int y=0; y<interactShape[x].length; y++) {
+                    interactShape[x][y].display();
+                }            
+            }
+        }        
     }
 
     void displayNormalShape() {
-        for (int x=0; x<normalShape.length; x++) {
-            for (int y=0; y<normalShape[x].length; y++) {
-                normalShape[x][y].display();
-            }            
-        }
+        if (normalShape != null) {
+            for (int x=0; x<normalShape.length; x++) {
+                for (int y=0; y<normalShape[x].length; y++) {
+                    normalShape[x][y].display();
+                }            
+            }
+        }        
     }
 
     void displayAllShapes() {
