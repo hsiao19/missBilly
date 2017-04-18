@@ -5,12 +5,14 @@ class ProjectHandler {
 
     // characters ------------------------------
     ExampleCharacter exampleCharacter;
+    Billy billy;
 
     ProjectHandler () {
         nodesBase = new NodesBase();
 
         mainCanvas = new MainCanvas(nodesBase);
         exampleCharacter = new ExampleCharacter(nodesBase);
+        billy = new Billy(nodesBase);
     }
 
     void setEnvironment(color strokeColor, int strokeWeight) {
@@ -35,10 +37,10 @@ class ProjectHandler {
     }
 
     // CHARACTER RELATED
-    void displayExampleCharacter() {
-        exampleCharacter.displayInteractShape();
-    }
-    void triggerExampleInteraction() {
-        exampleCharacter.triggerInteractShape(0, 0);
-    }
+    // void displayExampleCharacter() {
+    //     exampleCharacter.displayInteractShape();
+    // }
+    // void triggerExampleInteraction() {
+    //     exampleCharacter.triggerInteractShape(0, 0);
+    // }
 }
